@@ -9,22 +9,34 @@
 const griglia = document.getElementById("griglia");
 
 // Selezioni difficoltà
-// document.getElementById("facile").addEventListener("click", diffFacile());
-// document.getElementById("medio").addEventListener("click", diffMedio());
-// document.getElementById("difficile").addEventListener("click", diffDifficile());
-
-// Bottone test
-// document.getElementById("genera").addEventListener("click", diffFacile);
+document.getElementById("facile").addEventListener("click", diffFacile);
+document.getElementById("medio").addEventListener("click", diffMedio);
+document.getElementById("difficile").addEventListener("click", diffDifficile);
 
 
-// function diffFacile() {
-  for (i=1; i<11; i++) {
-    griglia.innerHTML += `<div id="riga${i}" class="riga"></div>`;
-    
-    
-    for (i2=1; i2<11; i2++) {
-      document.getElementById("riga" + i).innerHTML += `<div id="cella${i2}" class="cella">${i2}</div>`;
-    }
-    
+function diffFacile() {
+  griglia.innerHTML = "";
+  griglia.classList.remove("medio", "difficile");
+  griglia.classList.add("facile");
+  for (i=1; i<101; i++) {
+    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
   }
-  // }
+}
+
+function diffMedio() {
+  griglia.innerHTML = "";
+  griglia.classList.remove("facile", "difficile");
+  griglia.classList.add("medio");
+  for (i=1; i<82; i++) {
+    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
+  }
+}
+
+function diffDifficile() {
+  griglia.innerHTML = "";
+  griglia.classList.remove("facile", "medio");
+  griglia.classList.add("difficile");
+  for (i=1; i<50; i++) {
+    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
+  }
+}
