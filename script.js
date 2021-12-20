@@ -7,19 +7,27 @@
 
 // Definisco variabili utili
 const griglia = document.getElementById("griglia");
+let cella = document.getElementsByClassName("cella");
 
 // Selezioni difficoltà
 document.getElementById("facile").addEventListener("click", diffFacile);
 document.getElementById("medio").addEventListener("click", diffMedio);
 document.getElementById("difficile").addEventListener("click", diffDifficile);
 
-
+// Funzioni
 function diffFacile() {
   griglia.innerHTML = "";
   griglia.classList.remove("medio", "difficile");
   griglia.classList.add("facile");
   for (i=1; i<101; i++) {
-    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
+    griglia.innerHTML += `<div class="cella">${i}</div>`;
+  }
+
+  // Click sulla cella
+  for (i=0; i<cella.length; i++) {
+  cella[i].addEventListener("click", function(){
+    this.classList.add("azzurro");
+  });
   }
 }
 
@@ -28,8 +36,15 @@ function diffMedio() {
   griglia.classList.remove("facile", "difficile");
   griglia.classList.add("medio");
   for (i=1; i<82; i++) {
-    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
+    griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
+
+  // Click sulla cella
+  for (i=0; i<cella.length; i++) {
+    cella[i].addEventListener("click", function(){
+      this.classList.add("azzurro");
+    });
+    }
 }
 
 function diffDifficile() {
@@ -37,6 +52,14 @@ function diffDifficile() {
   griglia.classList.remove("facile", "medio");
   griglia.classList.add("difficile");
   for (i=1; i<50; i++) {
-    griglia.innerHTML += `<div id="cella${i}" class="cella">${i}</div>`;
+    griglia.innerHTML += `<div class="cella">${i}</div>`;
+  }
+
+  // Click sulla cella
+  for (i=0; i<cella.length; i++) {
+  cella[i].addEventListener("click", function(){
+    this.classList.add("azzurro");
+  });
   }
 }
+
