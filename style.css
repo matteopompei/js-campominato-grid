@@ -30,10 +30,35 @@ header {
   align-items: center;
   font-size: 1.7rem;
   font-weight: bold;
+  animation: entrata-header 1s ease-out both;
+}
+
+@keyframes entrata-header {
+  0% {
+    transform: translate(0, -300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
 }
 
 #logo {
   width: 100px;
+  animation: entrata-logo 0.6s ease-out both;
+  animation-delay: 1.1s;
+}
+
+@keyframes entrata-logo {
+  0% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
 }
 
 #title {
@@ -42,12 +67,23 @@ header {
   align-items: center;  
   gap: 30px;
   font-size: 3rem;
+  letter-spacing: 5px;
 }
 
 #credits {
-  margin-bottom: 50px;
+  margin: 50px auto;
   text-align: center;
   font-size: 0.9rem;
+}
+
+#select {
+  margin: 150px auto;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.hidden {
+  display: none;
 }
 
 button {
@@ -70,11 +106,27 @@ button:hover {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
 }
 
+button:active {
+  background-color: #5c5c5c;
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
 /* Griglia */
 #griglia {
   margin: 100px auto;
   display: flex;
   flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.animazione {
+  animation: comparsa-griglia 1.5s;
+}
+
+@keyframes comparsa-griglia {
+  0% {transform: scale(0);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
 }
 
 .facile, .medio, .difficile {

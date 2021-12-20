@@ -9,6 +9,8 @@
 // Definisco variabili utili
 const griglia = document.getElementById("griglia");
 let cella = document.getElementsByClassName("cella");
+const diffSet = document.getElementById("select");
+
 
 // Selezioni difficoltà
 document.getElementById("facile").addEventListener("click", diffFacile);
@@ -17,9 +19,10 @@ document.getElementById("difficile").addEventListener("click", diffDifficile);
 
 // Funzioni
 function diffFacile() {
+  diffSet.classList.add("hidden");
   griglia.innerHTML = "";
-  griglia.classList.remove("medio", "difficile");
-  griglia.classList.add("facile");
+  griglia.classList.remove("animazione", "medio", "difficile");
+  griglia.classList.add("animazione", "facile");
   for (i=1; i<101; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
@@ -27,9 +30,10 @@ function diffFacile() {
 }
 
 function diffMedio() {
+  diffSet.classList.add("hidden");
   griglia.innerHTML = "";
-  griglia.classList.remove("facile", "difficile");
-  griglia.classList.add("medio");
+  griglia.classList.remove("animazione", "facile", "difficile");
+  griglia.classList.add("animazione", "medio");
   for (i=1; i<82; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
@@ -37,9 +41,10 @@ function diffMedio() {
 }
 
 function diffDifficile() {
+  diffSet.classList.add("hidden");
   griglia.innerHTML = "";
-  griglia.classList.remove("facile", "medio");
-  griglia.classList.add("difficile");
+  griglia.classList.remove("animazione", "facile", "medio");
+  griglia.classList.add("animazione", "difficile");
   for (i=1; i<50; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
