@@ -14,14 +14,17 @@ const griglia = document.getElementById("griglia");
 // document.getElementById("difficile").addEventListener("click", diffDifficile());
 
 // Bottone test
-document.getElementById("genera").addEventListener("click", diffFacile);
+// document.getElementById("genera").addEventListener("click", diffFacile);
 
 
-function diffFacile() {
-  for(i=0; i<10; i++) {
-    griglia.innerHTML += `<div class="riga${i}"></div>`;
+// function diffFacile() {
+  for (i=1; i<11; i++) {
+    griglia.innerHTML += `<div id="riga${i}" class="riga"></div>`;
     
-
-      console.log("ciao");
+    
+    for (i2=1; i2<11; i2++) {
+      document.getElementById("riga" + i).innerHTML += `<div id="cella${i2}" class="cella">${i2}</div>`;
     }
+    
   }
+  // }
