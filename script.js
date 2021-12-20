@@ -5,6 +5,7 @@
 // con difficoltà 2 => tra 1 e 81
 // con difficoltà 3 => tra 1 e 49
 
+
 // Definisco variabili utili
 const griglia = document.getElementById("griglia");
 let cella = document.getElementsByClassName("cella");
@@ -22,13 +23,7 @@ function diffFacile() {
   for (i=1; i<101; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
-
-  // Click sulla cella
-  for (i=0; i<cella.length; i++) {
-  cella[i].addEventListener("click", function(){
-    this.classList.add("azzurro");
-  });
-  }
+  cellaAzzurra();
 }
 
 function diffMedio() {
@@ -38,13 +33,7 @@ function diffMedio() {
   for (i=1; i<82; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
-
-  // Click sulla cella
-  for (i=0; i<cella.length; i++) {
-    cella[i].addEventListener("click", function(){
-      this.classList.add("azzurro");
-    });
-    }
+  cellaAzzurra();
 }
 
 function diffDifficile() {
@@ -54,12 +43,14 @@ function diffDifficile() {
   for (i=1; i<50; i++) {
     griglia.innerHTML += `<div class="cella">${i}</div>`;
   }
-
-  // Click sulla cella
-  for (i=0; i<cella.length; i++) {
-  cella[i].addEventListener("click", function(){
-    this.classList.add("azzurro");
-  });
-  }
+  cellaAzzurra();
 }
 
+// Click sulla cella
+function cellaAzzurra() {
+  for (i=0; i<cella.length; i++) {
+    cella[i].addEventListener("click", function(){
+      this.classList.add("azzurro");
+    });
+  }
+}
