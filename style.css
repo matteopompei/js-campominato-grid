@@ -132,24 +132,12 @@ button:active {
 
 .facile, .medio, .difficile {
   border: 2px solid #fff;
-}
-
-.facile {
-  width: 1004px;
-}
-
-.medio {
-  width: 904px;
-}
-
-.difficile {
-  width: 704px;
+  width: 750px;
+  height: 750px;
 }
 
 .cella {
   margin: 0px 0;
-  height: 100px;
-  width: 100px;
   border: 2px solid #fff;
   background-color: #333;
   transition: background-color 0.3s;
@@ -157,6 +145,21 @@ button:active {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.facile .cella {
+  height: calc(100% / 10);
+  width: calc(100% / 10);
+}
+
+.medio .cella {
+  height: calc(100% / 9);
+  width: calc(100% / 9);
+}
+
+.difficile .cella {
+  height: calc(100% / 7);
+  width: calc(100% / 7);
 }
 
 .cella:hover {
